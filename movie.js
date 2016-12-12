@@ -1,7 +1,10 @@
-var request = require('request');
+console.log("beginning movie.js");
+
+
+var requestVar = require("request");
 
 var getMovie = function(film) {
-	var omdb = request("http://www.omdbapi.com/?t="+film, function(err, res, body) {
+	var omdb = requestVar("http://www.omdbapi.com/?t="+film,function(error, response, body) {
 	var result = JSON.parse(body);
 	console.log("from movie.js");
 	console.log(result.Title);
