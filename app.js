@@ -1,5 +1,6 @@
-var threeFavoriteMovies = ["The Fall", "The Life Aquatic", "The Sandlot"];
-
-// array.forEach(){
-// 	// get their title with get
-// }
+var movie = require("./movie");
+var threeFavouriteMovies = ["The Fall", "The Life Aquatic", "The Sandlot"];
+threeFavouriteMovies.forEach(function(film) {
+	console.log("from app.js");
+	getMovie(film);
+});

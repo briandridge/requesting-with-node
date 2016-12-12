@@ -1,17 +1,14 @@
 var request = require('request');
-var apiUrl = "http://www.omdbapi.com/?t=";
 
-function get(movieTitle) {
-	var results = request(apiUrl+movieTitle);
-	console.log(results);
-	// resultsJSON = JSON.parse(results);
-	// console.log(resultsJSON.title);
-	console.log("it ran");
+var getMovie = function(film) {
+	var omdb = request("http://www.omdbapi.com/?t="+film, function(err, res, body) {
+	var result = JSON.parse(body);
+	console.log("from movie.js");
+	console.log(result.Title);
+	});	
 };
 
-get("The Fall");
-
-module.exports = get;
+module.exports = getMovie;
 
 
 
